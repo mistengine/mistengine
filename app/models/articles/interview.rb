@@ -1,0 +1,2 @@
+class Interview < Article
+end
