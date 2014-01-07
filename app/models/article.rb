@@ -11,6 +11,7 @@ class Article < ActiveRecord::Base
   after_save :sweep_caches
   def sweep_caches
     Rails.cache.delete 'index-articles'
+    self.touch
   end
 
   def to_partial_path
