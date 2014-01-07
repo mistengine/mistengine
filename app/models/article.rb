@@ -8,6 +8,9 @@ class Article < ActiveRecord::Base
   default_scope { where(published: true) }
   scope :paginates, ->(page) { order('articles.created_at DESC').limit(PER_PAGE).offset(page * PER_PAGE) }
 
+  has_many :authors
+  has_many :users, through: :authors
+
   after_save :sweep_caches
   def sweep_caches
     Rails.cache.delete 'index-articles'

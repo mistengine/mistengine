@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140107035846) do
+ActiveRecord::Schema.define(version: 20140107140021) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -33,5 +33,28 @@ ActiveRecord::Schema.define(version: 20140107035846) do
 
   add_index "articles", ["allow_comments"], name: "index_articles_on_allow_comments", using: :btree
   add_index "articles", ["published"], name: "index_articles_on_published", using: :btree
+
+  create_table "authors", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "article_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "authors", ["article_id"], name: "index_authors_on_article_id", using: :btree
+  add_index "authors", ["user_id"], name: "index_authors_on_user_id", using: :btree
+
+  create_table "users", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "password"
+    t.boolean  "active"
+    t.text     "blurb"
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "users", ["active"], name: "index_users_on_active", using: :btree
 
 end

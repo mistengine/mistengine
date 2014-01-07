@@ -1,4 +1,6 @@
 V5::Application.routes.draw do
+  resources :users
+
   root to: 'home#index'
 
   resources :articles, except: [:show, :destroy, :update]

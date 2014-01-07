@@ -4,14 +4,9 @@ class HomeController < ApplicationController
       Article.paginates(0).load
     end
 
-    times = [@articles.first].inject({}) do |package, elm|
-      package[elm] = elm.updated_at
-      package
-    end
-
-    last_modified = times.values.max
-    etag_obj = times.key(last_modified)
+    last_modified, etag_obj = get_last_modified([@articles.first])
 
     fresh_when last_modified: last_modified, etag: etag_obj
+    expires_in 1.hour, public: true
   end
 end

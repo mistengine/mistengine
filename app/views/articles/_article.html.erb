@@ -2,5 +2,6 @@
   <article>
     <h2><%= link_to article.title, article %></h2>
     <%= simple_format(article.blurb) %>
+    by <%= article.users.to_a.map(&:name).join(', ') %> on <%= article.created_at.to_time.strftime("%B %d, %Y") %>
   </article>
 <% end %>
