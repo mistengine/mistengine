@@ -3,7 +3,7 @@ module ApplicationHelper
     return Time.now unless objects.is_a?(Array)
 
     times = objects.inject({}) do |package, elm|
-      package[elm] = elm.updated_at
+      package[elm] = elm.updated_at if elm.present?
       package
     end
 
