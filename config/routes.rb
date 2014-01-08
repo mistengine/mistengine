@@ -1,4 +1,6 @@
 V5::Application.routes.draw do
+  resources :groups
+
   resources :users
 
   root to: 'home#index'

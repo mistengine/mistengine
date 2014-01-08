@@ -36,6 +36,23 @@ gem 'rspec-rails'
 
 gem 'quiet_assets', :group => :development
 
+gem 'factory_girl'
+gem 'faker'
+
+group :development, :test do
+  gem 'spork', '~> 1.0.0rc4'
+  gem 'guard', '~> 2.1.1'
+  gem 'guard-rspec'
+  gem 'guard-livereload'
+  gem 'rack-livereload'
+  #gem 'guard-compass'
+  gem 'guard-spork'
+  gem 'guard-passenger'
+  gem 'capybara'
+  gem 'database_cleaner'
+end
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
