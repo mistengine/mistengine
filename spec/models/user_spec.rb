@@ -92,7 +92,7 @@ describe User do
           subject.can?('admin.view_admincp').should be_true
         end
         it 'returns false if a user cannot do something' do
-          subject.can?('aricles.create_articles').should be_false
+          subject.can?('articles.create_articles').should be_false
         end
       end
 
