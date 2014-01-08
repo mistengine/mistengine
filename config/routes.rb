@@ -1,4 +1,6 @@
 V5::Application.routes.draw do
+  resources :covers
+
   resources :groups
 
   resources :users

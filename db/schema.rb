@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140107142928) do
+ActiveRecord::Schema.define(version: 20140108132920) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -43,6 +43,20 @@ ActiveRecord::Schema.define(version: 20140107142928) do
 
   add_index "authors", ["article_id"], name: "index_authors_on_article_id", using: :btree
   add_index "authors", ["user_id"], name: "index_authors_on_user_id", using: :btree
+
+  create_table "covers", force: true do |t|
+    t.integer  "article_id"
+    t.string   "title"
+    t.string   "url"
+    t.text     "description"
+    t.boolean  "active"
+    t.integer  "weight"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "covers", ["active"], name: "index_covers_on_active", using: :btree
+  add_index "covers", ["article_id"], name: "index_covers_on_article_id", using: :btree
 
   create_table "group_members", force: true do |t|
     t.integer  "group_id"

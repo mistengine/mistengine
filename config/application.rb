@@ -21,5 +21,6 @@ module V5
     # config.i18n.default_locale = :de
 
     config.autoload_paths += Dir[Rails.root.join('app', 'models', '{**}')]
+    config.i18n.enforce_available_locales = true
   end
 end

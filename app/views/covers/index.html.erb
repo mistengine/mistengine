@@ -1,0 +1,37 @@
+<h1>Listing covers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Article</th>
+      <th>Title</th>
+      <th>Url</th>
+      <th>Description</th>
+      <th>Active</th>
+      <th>Weight</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @covers.each do |cover| %>
+      <tr>
+        <td><%= cover.article_id %></td>
+        <td><%= cover.title %></td>
+        <td><%= cover.url %></td>
+        <td><%= cover.description %></td>
+        <td><%= cover.active %></td>
+        <td><%= cover.weight %></td>
+        <td><%= link_to 'Show', cover %></td>
+        <td><%= link_to 'Edit', edit_cover_path(cover) %></td>
+        <td><%= link_to 'Destroy', cover, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cover', new_cover_path %>
