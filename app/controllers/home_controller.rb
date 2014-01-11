@@ -7,7 +7,8 @@ class HomeController < ApplicationController
     @articles ||= []
 
     @covers = Rails.cache.fetch 'index-covers' do
-      Cover.order('weight ASC').limit(3)
+      covers = Cover.limit(3).joins(:article).order('weight ASC').load
+      covers
     end
 
     last_modified, etag_obj = get_last_modified([@articles[0], @covers[0]])
