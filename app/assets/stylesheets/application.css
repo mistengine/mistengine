@@ -194,7 +194,7 @@ header {
 header div#logo {
   height: 50px;
   position: relative;
-  background: transparent url(/images/logo.png) top left no-repeat;
+  background: transparent url(http://rpgsite.net/images/logo.png) top left no-repeat;
   height: 100px;
   padding: 10px;
   display: block;
@@ -771,7 +771,7 @@ display: none;
     background-position: center;
     background-repeat: no-repeat;
     div#logo {
-      background: $dark_blue url(/images/logo_moving.png) top left no-repeat !important;
+      background: $dark_blue url(http://rpgsite.net/images/logo_moving.png) top left no-repeat !important;
       height: 35px;
       margin-left: 0 !important;
     }
@@ -804,7 +804,7 @@ display: none;
 }
 
 p.comments a {
-  background: $dark_blue url(/images/comment.png) 5px 7px no-repeat;
+  background: $dark_blue url(http://rpgsite.net/images/comment.png) 5px 7px no-repeat;
   bottom: 11px;
   right: 0;
   position: absolute;
@@ -981,7 +981,7 @@ h2 {
 }
 
 .header-image {
-  background: url(/images/social_icons.png);
+  background: url(http://rpgsite.net/images/social_icons.png);
   width: 30px;
   display: inline-block !important;
   clear: none !important;
@@ -1003,7 +1003,7 @@ width: 29px;
 }
 
 #search_terms {width: 100%;
-background: white url(/images/search.png) 2px 5px no-repeat;
+background: white url(http://rpgsite.net/images/search.png) 2px 5px no-repeat;
 padding: 5px 5px 5px 20px;
 border: 0;
 height: 24px;
@@ -1023,7 +1023,7 @@ height: 24px;
 }
 
 .menu-arrow {
-  background: url(/images/nav_arrow.png) top left no-repeat;
+  background: url(http://rpgsite.net/images/nav_arrow.png) top left no-repeat;
   display: inline-block;
   width: 13px;
   height: 7px;
@@ -1056,7 +1056,7 @@ height: 24px;
   .sidebar-button {
     width: 60px;
     height: 28px;
-    background-image: url(/images/game-sidebar-buttons.png);
+    background-image: url(http://rpgsite.net/images/game-sidebar-buttons.png);
   }
   div { height: 55px; }
   a {

@@ -72,7 +72,7 @@
       <% if flash[:notice] %><div id="notice"><%= flash[:notice] %></div><% end %>
       <% if @show_toolbar && @admin_toolbar_links %>
         <div id="admin-toolbar">
-          <a href="/admin"><img src="/images/cog.png" alt="" /></a>
+          <a href="/admin"><img src="http://rpgsite.net/images/cog.png" alt="" /></a>
           <ul>
           <% @admin_toolbar_links.each do |title, link| %>
             <li><%# link_to title, link, target: '_blank' %></li>
@@ -95,14 +95,14 @@
 <footer>
   <div role="footer">
     <div id="info" class="footer-section">
-      <%= link_to root_path do %><%= image_tag '/images/logo_moving.png', alt: "RPG Site" %><% end %>
+      <%= link_to root_path do %><%= image_tag 'http://rpgsite.net/images/logo_moving.png', alt: "RPG Site" %><% end %>
       <ul id="social-footer">
-        <li><%# link_to '@rpgsite', 'http://twitter.com/rpgsite', style: 'background-image: url(/images/social/small/twitter.gif)' %></li>
-        <li><%# link_to 'RPGSite.net', 'http://facebook.com/rpgsite.net', style: 'background-image: url(/images/social/small/facebook.gif)' %></li>
-        <li><%# link_to 'RPGSiteNet', 'http://www.youtube.com/rpgsitenet', style: 'background-image: url(/images/social/small/youtube.gif)' %></li>
-        <li><%# link_to 'RPGSite', 'http://www.twitch.tv/RPGSite', style: 'background-image: url(/images/social/small/twitch.png)' %></li>
-        <li><%# link_to 'RPGSiteNet', 'http://rpgsitenet.tumblr.com', style: 'background-image: url(/images/social/small/tumblr.gif)' %></li>
-        <li><%# link_to 'RPGSiteNet', 'https://plus.google.com/s/rpgsite.net', style: 'background-image: url(/images/social/small/gplus.gif)' %></li>
+        <li><%= link_to '@rpgsite', 'http://twitter.com/rpgsite', style: 'background-image: url(http://rpgsite.net/images/social/small/twitter.gif)' %></li>
+        <li><%= link_to 'RPGSite.net', 'http://facebook.com/rpgsite.net', style: 'background-image: url(http://rpgsite.net/images/social/small/facebook.gif)' %></li>
+        <li><%= link_to 'RPGSiteNet', 'http://www.youtube.com/rpgsitenet', style: 'background-image: url(http://rpgsite.net/images/social/small/youtube.gif)' %></li>
+        <li><%= link_to 'RPGSite', 'http://www.twitch.tv/RPGSite', style: 'background-image: url(http://rpgsite.net/images/social/small/twitch.png)' %></li>
+        <li><%= link_to 'RPGSiteNet', 'http://rpgsitenet.tumblr.com', style: 'background-image: url(http://rpgsite.net/images/social/small/tumblr.gif)' %></li>
+        <li><%= link_to 'RPGSiteNet', 'https://plus.google.com/s/rpgsite.net', style: 'background-image: url(http://rpgsite.net/images/social/small/gplus.gif)' %></li>
       </ul>
     </div>
     <div id="network-links" class="footer-section">
@@ -143,7 +143,7 @@
       </ul>
     </div>
     <div role="network">
-      <a href="/network"><img src="/images/network_logo.png" alt="<%=t 'site.network' %>" /></a>
+      <a href="/network"><img src="http://rpgsite.net/images/network_logo.png" alt="<%=t 'site.network' %>" /></a>
       <p class="copy"><%=raw t 'site.copyright.site' %></p>
       <p class="copy other"><%=raw t 'site.copyright.other' %></p>
     </div>
