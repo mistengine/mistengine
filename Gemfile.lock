@@ -203,7 +203,7 @@ PLATFORMS
 DEPENDENCIES
   capybara
   coffee-rails (~> 4.0.0)
-  compass-rails (~> 1.1.2)
+  compass-rails
   database_cleaner
   factory_girl
   faker
