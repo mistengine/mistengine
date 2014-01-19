@@ -1,3 +1,24 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'compass';
+@import 'variables';
+
+.coverstory {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid $wrapper_background;
+}
+
+.headline {
+  height: 275px;
+  h2 {
+
+  }
+  @media screen and (max-width: 600px) {
+    height: auto;
+    padding-top: 38.0%;
+  }
+}

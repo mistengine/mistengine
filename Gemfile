@@ -54,7 +54,9 @@ group :development, :test do
   gem 'database_cleaner'
 end
 
-gem 'rack-mini-profiler'
+# gem 'rack-mini-profiler'
+gem 'carrierwave'
+gem 'mini_magick'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

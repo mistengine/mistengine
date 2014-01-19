@@ -14,7 +14,8 @@ class Article < ActiveRecord::Base
 
   after_save :sweep_caches
   def sweep_caches
-    Rails.cache.delete 'index-articles'
+    Rails.cache.write 'index-articles', Article.paginates(0).load
+    Rails.cache.write "article-#{self.id}", self
     self.touch
   end
 

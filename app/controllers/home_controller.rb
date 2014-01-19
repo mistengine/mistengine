@@ -7,13 +7,8 @@ class HomeController < ApplicationController
     @articles ||= []
 
     @covers = Rails.cache.fetch 'index-covers' do
-      covers = Cover.limit(3).joins(:article).order('weight ASC').load
+      covers = Cover.limit(3).joins("LEFT JOIN `articles` ON `articles`.`id` = `covers`.`article_id`").order('weight ASC').load
       covers
     end
-
-    last_modified, etag_obj = get_last_modified([@articles[0], @covers[0]])
-
-    fresh_when last_modified: last_modified, etag: etag_obj
-    expires_in 1.hour, public: true
   end
 end

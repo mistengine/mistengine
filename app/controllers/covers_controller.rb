@@ -42,11 +42,9 @@ class CoversController < ApplicationController
   def update
     respond_to do |format|
       if @cover.update(cover_params)
-        format.html { redirect_to @cover, notice: 'Cover was successfully updated.' }
-        format.json { head :no_content }
+        format.html { redirect_to root_path, notice: 'Cover was successfully updated.' }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @cover.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -69,6 +67,6 @@ class CoversController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cover_params
-      params.require(:cover).permit(:article_id, :title, :url, :description, :active, :weight)
+      params.require(:cover).permit(:article_id, :title, :url, :description, :active, :weight, :image)
     end
 end

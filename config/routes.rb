@@ -1,11 +1,16 @@
 V5::Application.routes.draw do
-  resources :covers
+  resources :covers, admin: true
 
   resources :groups
 
   resources :users
 
   root to: 'home#index'
+  scope '/home' do
+    get 'latest-articles' => 'home#latest_articles'
+    get 'latest-reviews' => 'home#latest_reviews'
+    get 'latest-covers' => 'home#latest_covers'
+  end
 
   resources :articles, except: [:show, :destroy, :update]
   constraints({ type: Regexp.new(Article::URL_TYPES.join('|')), id: /\d+/, slug: /[a-z0-9\-\_]+/ }) do

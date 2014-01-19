@@ -1,0 +1,6 @@
+<% cache cover do %>
+<article class="<%= cycle('headline', 'feature', 'feature') %> coverstory" style="background: url(<%= cover.image.url(:headline) %>)">
+  <h2><%= cover.title %></h2>
+  <div class="cover-blurb"><%= cover.description %></div>
+</article>
+<% end %>
