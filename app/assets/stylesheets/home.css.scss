@@ -17,8 +17,24 @@
   h2 {
 
   }
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: $tablet_breakpoint) {
     height: auto;
     padding-top: 38.0%;
   }
+}
+
+.feature {
+  height: 150px;
+  width: 50%;
+  float: left;
+  @media screen and (max-width: $tablet_breakpoint) {
+    width: 100%;
+    float: none;
+    clear: both;
+    border-bottom: 1px solid $wrapper_background;
+  }
+}
+
+.feature:first-child, :not(.feature) + .feature {
+  border-right: 1px solid $wrapper_background;
 }
