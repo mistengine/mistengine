@@ -1,2 +1,10 @@
-<section id="covers"><%= render @covers %></section>
-<section id="articles"><%= render @articles %></section>
+<section id="covers">
+<% cache @covers do %>
+  <%= render @covers %>
+<% end %>
+</section>
+<section id="articles">
+<% cache @articles do %>
+  <%= render @articles %>
+<% end %>
+</section>

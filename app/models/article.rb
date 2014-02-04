@@ -12,11 +12,16 @@ class Article < ActiveRecord::Base
   has_many :users, through: :authors
   has_many :covers
 
+  before_save :update_byline
+  def update_byline
+    self.byline = users.to_a.map(&:name).to_sentence
+  end
+
   after_save :sweep_caches
   def sweep_caches
+    self.touch
     Rails.cache.write 'index-articles', Article.paginates(0).load
     Rails.cache.write "article-#{self.id}", self
-    self.touch
   end
 
   def to_partial_path
