@@ -4,6 +4,7 @@
 <% end %>
 </section>
 <section id="articles">
+<h1><%= t('articles.recents') %></h1>
 <% cache @articles do %>
   <%= render @articles %>
 <% end %>

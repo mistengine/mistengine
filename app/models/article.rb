@@ -5,7 +5,8 @@ class Article < ActiveRecord::Base
 
   validates_presence_of :title, :blurb, :text
 
-  default_scope { where(published: true) }
+  scope :published, -> { where(published: true) }
+  scope :unpublished, -> { where(published: false) }
   scope :paginates, ->(page) { order('articles.created_at DESC').limit(PER_PAGE).offset(page * PER_PAGE) }
 
   has_many :authors
