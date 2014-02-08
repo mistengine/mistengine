@@ -5,6 +5,7 @@ class MinipicUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
+  include CarrierWave::ImageOptim
 
   # Choose what kind of storage to use for this uploader:
   storage :file
@@ -33,10 +34,12 @@ class MinipicUploader < CarrierWave::Uploader::Base
 
   version :list do
     process scale: [150, 97]
+    process :compress
   end
 
   version :hub do
     process scale: [310, 200]
+    process :compress
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

@@ -5,6 +5,7 @@ class CoverImageUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
+  include CarrierWave::ImageOptim
 
   # Choose what kind of storage to use for this uploader:
   storage :file
@@ -34,14 +35,20 @@ class CoverImageUploader < CarrierWave::Uploader::Base
   # Create different versions of your uploaded files:
   version :headline do
     process :scale => [1000, 275]
+    process :quality => 80
+    process :compress
   end
 
   version :feature do
     process :scale => [500, 150]
+    process :quality => 80
+    process :compress
   end
 
   version :article do
     process :scale => [1000, 310]
+    process :quality => 80
+    process :compress
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

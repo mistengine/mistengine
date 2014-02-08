@@ -1,6 +1,6 @@
 <% cache article do %>
 <article>
-  <%= image_tag article.minipic.url(:list), class: 'article-list-image' %>
+  <%= link_to image_tag(article.minipic.url(:list), class: 'article-list-image', alt: article.title), article %>
   <h2><%= link_to article.title, article %></h2>
   <%= simple_format(article.blurb) %>
   <%= t('articles.byline', name: article.byline, date: article.created_at.to_time.strftime("%B %d, %Y")) %>
