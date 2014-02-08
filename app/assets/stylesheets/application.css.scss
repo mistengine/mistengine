@@ -32,3 +32,13 @@ section#wrapper {
     width: 100%;
   }
 }
+
+section[role="article-list"] {
+  article {
+    clear: both;
+    img.article-list-image {
+      float: left;
+      margin-right: 10px;
+    }
+  }
+}

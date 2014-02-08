@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140119050925) do
+ActiveRecord::Schema.define(version: 20140208035446) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20140119050925) do
     t.datetime "updated_at"
     t.boolean  "published"
     t.boolean  "allow_comments"
+    t.string   "minipic"
   end
 
   add_index "articles", ["allow_comments"], name: "index_articles_on_allow_comments", using: :btree

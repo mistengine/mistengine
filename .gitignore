@@ -14,3 +14,4 @@ config/database.yml
 /tmp
 public/uploads
 .*.swp
+.DS_Store

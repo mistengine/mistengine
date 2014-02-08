@@ -3,7 +3,7 @@
   <%= render @covers %>
 <% end %>
 </section>
-<section id="articles">
+<section id="articles" role="article-list">
 <h1><%= t('articles.recents') %></h1>
 <% cache @articles do %>
   <%= render @articles %>

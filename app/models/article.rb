@@ -13,6 +13,8 @@ class Article < ActiveRecord::Base
   has_many :users, through: :authors
   has_many :covers
 
+  mount_uploader :minipic, MinipicUploader
+
   before_save :update_byline
   def update_byline
     self.byline = users.to_a.map(&:name).to_sentence
