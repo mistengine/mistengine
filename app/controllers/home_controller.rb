@@ -15,6 +15,5 @@ class HomeController < ApplicationController
     end
 
     @stylesheets = ['home']
-    @javascripts = []
   end
 end
