@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-MistEngine::Application.config.secret_key_base = ''
+MistEngine::Application.config.secret_key_base = 'efb17846cf3602a4a4e37bca6bfbdb6a15088aec37ea8171535d0461120b235141510ff90a1435258f31f1ea59d65a4029f5303d295f797d0f8ba7cddc0c9c7c'
