@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-V5::Application.load_tasks
+MistEngine::Application.load_tasks

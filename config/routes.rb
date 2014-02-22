@@ -1,4 +1,4 @@
-V5::Application.routes.draw do
+MistEngine::Application.routes.draw do
   resources :covers, admin: true
 
   resources :groups
