@@ -26,7 +26,7 @@ class Cover < ActiveRecord::Base
   end
 
   def sweep_cache
-    Cover.active.map(&:touch)
+    Cover.active.each(&:touch)
     new_covers = Cover.front_page
     Rails.cache.write 'index-covers', new_covers
   end
