@@ -12,16 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :article_id %><br>
-    <%= f.number_field :article_id %>
-  </div>
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.label :article %><br>
+    <%= f.collection_select(:article_id, Article.published.latest_first, :id, :title, prompt: 'Choose an article') %>
   </div>
   <div class="field">
     <%= f.label :url %><br>
     <%= f.text_field :url %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
