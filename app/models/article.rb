@@ -43,4 +43,8 @@ class Article < ActiveRecord::Base
   def slug
     "#{title.downcase.parameterize}"
   end
+
+  def byline
+    I18n.t('articles.byline', name: super, date: created_at.to_time.strftime('%B %d, %Y'))
+  end
 end

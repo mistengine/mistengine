@@ -10,7 +10,7 @@ class HomeController < ApplicationController
     @articles ||= []
 
     @covers = Rails.cache.fetch 'index-covers' do
-      covers = Cover.limit(3).joins("LEFT JOIN `articles` ON `articles`.`id` = `covers`.`article_id`").order('weight ASC').load
+      covers = Cover.front_page
     end
 
     @covers ||= []
