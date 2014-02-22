@@ -18,16 +18,16 @@ class Cover < ActiveRecord::Base
   private
 
   def article_or_url
-    errors[:base] << "Please provide either an article or a URL" unless article_id.present? || url.present?
+    errors[:base] << I18n.t('covers.errors.article-or-url-error') unless article_id.present? || url.present?
   end
 
   def url_details
-    errors[:base] << "Please provide a title and description for that URL" if url.present? && (title.blank? || description.blank?)
+    errors[:base] << I18n.t('covers.errors.title-description-error') if url.present? && (title.blank? || description.blank?)
   end
 
   def sweep_cache
-    Cover.active.each(&:touch)
     new_covers = Cover.front_page
+    new_covers.each(&:touch)
     Rails.cache.write 'index-covers', new_covers
   end
 end

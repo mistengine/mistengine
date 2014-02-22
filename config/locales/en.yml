@@ -23,3 +23,7 @@ en:
   articles:
     byline: "by %{name} on %{date}"
     recents: "Recent Articles"
+  covers:
+    errors:
+      article-or-url-error: "Please provide either an article or a URL"
+      title-description-error: "Please provide a title and description for that URL"
