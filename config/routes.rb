@@ -1,8 +1,5 @@
 MistEngine::Application.routes.draw do
-  resources :covers, admin: true
-
   resources :groups
-
   resources :users
 
   root to: 'home#index'
@@ -17,5 +14,9 @@ MistEngine::Application.routes.draw do
     get '/:type/:id-:slug' => 'articles#show'
     delete '/:type/:id-:slug' => 'articles#destroy'
     patch '/:type/:id-:slug' => 'articles#update'
+  end
+
+  namespace :admin do
+    resources :covers
   end
 end

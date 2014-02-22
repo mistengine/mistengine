@@ -1,4 +1,4 @@
-<%= form_for(@cover) do |f| %>
+<%= form_for([:admin, @cover]) do |f| %>
   <% if @cover.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@cover.errors.count, "error") %> prohibited this cover from being saved:</h2>

@@ -1,0 +1,72 @@
+# The covers controller handlers all of the cover stories found on the front
+# page and elsewhere around the site.
+class Admin::CoversController < ApplicationController
+  before_action :set_cover, only: [:show, :edit, :update, :destroy]
+
+  # GET /covers
+  # GET /covers.json
+  def index
+    @covers = Cover.all
+  end
+
+  # GET /covers/1
+  # GET /covers/1.json
+  def show
+  end
+
+  # GET /covers/new
+  def new
+    @cover = Cover.new
+  end
+
+  # GET /covers/1/edit
+  def edit
+  end
+
+  # POST /covers
+  # POST /covers.json
+  def create
+    @cover = Cover.new(cover_params)
+
+    respond_to do |format|
+      if @cover.save
+        format.html { redirect_to admin_covers_path, notice: 'Cover was successfully created.' }
+      else
+        format.html { render action: 'new' }
+      end
+    end
+  end
+
+  # PATCH/PUT /covers/1
+  # PATCH/PUT /covers/1.json
+  def update
+    respond_to do |format|
+      if @cover.update(cover_params)
+        format.html { redirect_to admin_covers_path, notice: 'Cover was successfully updated.' }
+      else
+        format.html { render action: 'edit' }
+      end
+    end
+  end
+
+  # DELETE /covers/1
+  # DELETE /covers/1.json
+  def destroy
+    @cover.destroy
+    redirect_to admin_covers_url
+  end
+
+  private
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_cover
+    @cover = Cover.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow
+  # the white list through.
+  def cover_params
+    params.require(:cover).permit(:article_id, :title, :url, :description,
+                                  :active, :weight, :image)
+  end
+end

@@ -1,5 +1,5 @@
+# The HomeController handles the data seen on the front page front page data.
 class HomeController < ApplicationController
-  layout false, except: [:index]
   respond_to :html
 
   def index
@@ -10,7 +10,7 @@ class HomeController < ApplicationController
     @articles ||= []
 
     @covers = Rails.cache.fetch 'index-covers' do
-      covers = Cover.front_page
+      Cover.front_page
     end
 
     @covers ||= []

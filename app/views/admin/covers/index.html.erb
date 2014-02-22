@@ -24,9 +24,8 @@
         <td><%= cover.description %></td>
         <td><%= cover.active %></td>
         <td><%= cover.weight %></td>
-        <td><%= link_to 'Show', cover %></td>
-        <td><%= link_to 'Edit', edit_cover_path(cover) %></td>
-        <td><%= link_to 'Destroy', cover, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_admin_cover_path(cover) %></td>
+        <td><%= link_to 'Destroy', admin_cover_path(cover), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +33,4 @@
 
 <br>
 
-<%= link_to 'New Cover', new_cover_path %>
+<%= link_to 'New Cover', new_admin_cover_path %>
