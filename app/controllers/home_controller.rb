@@ -4,7 +4,7 @@ class HomeController < ApplicationController
 
   def index
     @articles = Rails.cache.fetch 'index-articles' do
-      Article.published.paginates(0).load
+      Article.by_published.paginates(0).load
     end
 
     @articles ||= []

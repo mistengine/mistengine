@@ -9,6 +9,7 @@ class Article < ActiveRecord::Base
   scope :unpublished, -> { where(published: false) }
   scope :paginates, ->(page) { latest_first.limit(PER_PAGE).offset(page * PER_PAGE) }
   scope :latest_first, -> { order('articles.created_at DESC') }
+  scope :by_published, -> { published.order('published_at DESC') }
 
   has_many :authors
   has_many :users, through: :authors
