@@ -1,30 +1,20 @@
-# The covers controller handlers all of the cover stories found on the front
-# page and elsewhere around the site.
 class Admin::CoversController < ApplicationController
   before_action :set_cover, only: [:show, :edit, :update, :destroy]
 
-  # GET /covers
-  # GET /covers.json
   def index
     @covers = Cover.all
   end
 
-  # GET /covers/1
-  # GET /covers/1.json
   def show
   end
 
-  # GET /covers/new
   def new
     @cover = Cover.new
   end
 
-  # GET /covers/1/edit
   def edit
   end
 
-  # POST /covers
-  # POST /covers.json
   def create
     @cover = Cover.new(cover_params)
 
@@ -37,8 +27,6 @@ class Admin::CoversController < ApplicationController
     end
   end
 
-  # PATCH/PUT /covers/1
-  # PATCH/PUT /covers/1.json
   def update
     respond_to do |format|
       if @cover.update(cover_params)
@@ -49,8 +37,6 @@ class Admin::CoversController < ApplicationController
     end
   end
 
-  # DELETE /covers/1
-  # DELETE /covers/1.json
   def destroy
     @cover.destroy
     redirect_to admin_covers_url
