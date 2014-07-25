@@ -1,11 +1,14 @@
+<% content_for :covers do %>
 <section id="covers">
-<% cache @covers do %>
-  <%= render @covers %>
-<% end %>
+  <% cache @covers do %>
+    <%= render @covers %>
+  <% end %>
 </section>
-<section id="articles" role="article-list">
-<h1><%= t('articles.recents') %></h1>
-<% cache @articles do %>
-  <%= render @articles %>
 <% end %>
+
+<section id="articles" role="article-list">
+  <h1><%= t('articles.recents') %></h1>
+  <% cache @articles do %>
+    <%= render @articles %>
+  <% end %>
 </section>
